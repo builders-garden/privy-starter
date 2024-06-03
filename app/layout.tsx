@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import * as buildersGardenLogo from "@/public/builders-garden-logo.svg";
 import Providers from "../components/Providers";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -19,6 +22,22 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Providers>{children}</Providers>
+        <footer className="flex bg-violet-600 text-white justify-center">
+          <div className="flex gap-2 text-center items-center p-2">
+            <p className="text-sm sm:text-md lg:text-lg font-normal h-fit">
+              built by{" "}
+            </p>
+            <Link href="https://www.builders.garden" target="_blank">
+              <Image
+                src={buildersGardenLogo}
+                alt="Builders garden"
+                aria-label="Builders garden"
+                width={80}
+                height={64}
+              />
+            </Link>
+          </div>
+        </footer>
       </body>
     </html>
   );

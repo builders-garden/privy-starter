@@ -1,6 +1,5 @@
 "use client";
 import { usePrivy } from "@privy-io/react-auth";
-import Image from "next/image";
 import { useAccount } from "wagmi";
 
 export default function Home() {

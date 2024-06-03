@@ -27,13 +27,19 @@ export default function Providers({ children }: { children: React.ReactNode }) {
       config={{
         // Customize Privy's appearance in your app
         appearance: {
+          walletList: ["coinbase_wallet"],
           theme: "light",
           accentColor: "#676FFF",
-          logo: "https://your-logo-url",
         },
         // Create embedded wallets for users who don't have a wallet
         embeddedWallets: {
           createOnLogin: "users-without-wallets",
+        },
+        externalWallets: {
+          coinbaseWallet: {
+            // Valid connection options include 'eoaOnly' (default), 'smartWalletOnly', or 'all'
+            connectionOptions: "all",
+          },
         },
       }}
     >
